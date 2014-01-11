@@ -11,11 +11,8 @@ from pyramid.paster import (
 
 from pyramid.scripts.common import parse_vars
 
-from ..models import (
-    DBSession,
-    MyModel,
-    Base,
-    )
+from ..models.meta import (DBSession, Base)
+from ..models import MyModel
 
 
 def usage(argv):
