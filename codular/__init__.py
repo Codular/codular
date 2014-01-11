@@ -13,7 +13,12 @@ def main(global_config, **settings):
     config.include('pyramid_chameleon')
     config.include('pyramid_jinja2')
     config.add_jinja2_search_path("templates")
-    config.add_static_view('static', 'static', cache_max_age=3600)
-    config.add_route('home', '/')
+    config.include(add_routes)
     config.scan()
     return config.make_wsgi_app()
+
+def add_routes(config):
+    # Splitted from main() to be used in unit test and better visibility
+    config.add_static_view('static', 'static', cache_max_Age=3600)
+
+    config.add_route('home', '/')
