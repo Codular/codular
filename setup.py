@@ -18,6 +18,7 @@ requires = [
     'transaction',
     'zope.sqlalchemy',
     'waitress',
+    'cryptacular'
     ]
 
 setup(name='codular',
