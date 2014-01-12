@@ -38,10 +38,21 @@
         <!-- Collect the nav links, forms, and other content for toggling -->
         <div class="collapse navbar-collapse navbar-ex1-collapse">
           <ul class="nav navbar-nav side-nav">
-            <li class="active"><a href="{{'home'|route_url}}"><i class="fa fa-home"></i> Home</a></li>
-            <li><a href="{{'new_user'|route_url}}"><i class="fa fa-wrench"></i> Register</a></li>
-            <li><a href="{{'home'|route_url}}"><i class="fa fa-user"></i> Login</a></li>
-            <li><a href="{{'home'|route_url}}"><i class="fa fa-question"></i> About</a></li>
+            <li class="{{ 'active' if menu_active == 'home' else 'inactive' }}">
+                <a href="{{'home'|route_url}}"><i class="fa fa-home"></i> Home</a>
+            </li>
+
+            <li class="{{ 'active' if menu_active == 'new_user' else 'inactive' }}">
+                <a href="{{'new_user'|route_url}}"><i class="fa fa-wrench"></i> Register</a>
+            </li>
+
+            <li class="{{ 'active' if menu_active == 'login' else 'inactive' }}">
+                <a href="{{'home'|route_url}}"><i class="fa fa-user"></i> Login</a>
+            </li>
+
+            <li class="{{ 'active' if menu_active == 'about' else 'inactive' }}">
+                <a href="{{'home'|route_url}}"><i class="fa fa-question"></i> About</a>
+            </li>
           </ul>
 
           <ul class="nav navbar-nav navbar-right navbar-user">

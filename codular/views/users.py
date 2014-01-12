@@ -26,24 +26,30 @@ class ViewUsers(object):
 
     @view_config(route_name='users', renderer='json')
     def users(self):
-        return "users"
+        template_vars = {'menu_active': 'users'}
+        return template_vars
 
     @view_config(route_name='user', renderer='json')
     def user(self):
-        return "user"
+        template_vars = {'menu_active': 'user'}
+        return template_vars
 
     @view_config(route_name='update_user', renderer='json')
     def update_user(self):
-        return "update_user"
+        template_vars = {'menu_active': 'update_user'}
+        return template_vars
 
     @view_config(route_name='delete_user', renderer='json')
     def delete_user(self):
-        return "delete_user"
+        template_vars = {'menu_active': 'delete_user'}
+        return template_vars
 
     @view_config(route_name='new_user', renderer='users/new.jinja2')
     def new_user(self):
-        return {'one': "the one", 'project': 'codular'}
+        template_vars = {'menu_active': 'new_user'}
+        return template_vars
 
     @view_config(route_name='edit_user', renderer='json')
     def edit_user(self):
-        return "edit_user"
+        template_vars = {'menu_active': 'edit_user'}
+        return template_vars

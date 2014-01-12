@@ -21,4 +21,5 @@ class ViewHome(object):
 
     @view_config(route_name='home', renderer='home/home.jinja2')
     def home_get(self):
-        return {'one': "the one", 'project': 'codular'}
+        template_vars = {'menu_active': 'home', 'one': "the one", 'project': 'codular'}
+        return template_vars
