@@ -15,6 +15,10 @@ from ..models import (
 Is : Homepage
 Route : /
 """
-@view_config(route_name='home', renderer='home/home.jinja2')
-def view_home(request):
-    return {'one': "the one", 'project': 'codular'}
+class ViewHome(object):
+    def __init__(self, request):
+        self.request = request
+
+    @view_config(route_name='home', renderer='home/home.jinja2')
+    def home_get(self):
+        return {'one': "the one", 'project': 'codular'}
