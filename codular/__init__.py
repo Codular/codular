@@ -19,6 +19,6 @@ def main(global_config, **settings):
 
 def add_routes(config):
     # Splitted from main() to be used in unit test and better visibility
-    config.add_static_view('static', 'static', cache_max_Age=3600)
+    config.add_static_view('static', 'static', cache_max_age=3600)
 
     config.add_route('home', '/')
