@@ -40,7 +40,7 @@ class ViewUsers(object):
         template_vars = {'menu_active': 'user'}
         return template_vars
 
-    @view_config(route_name='update_user', request_method='POST', renderer='users/new.jinja2')
+    @view_config(route_name='update_user', renderer='users/new.jinja2')
     def update_user(self):
         template_vars = {'menu_active': 'update_user'}
         form = Form(Registration().bind(request=self.request), buttons=('submit',),
