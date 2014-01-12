@@ -39,4 +39,3 @@ def add_routes(config):
     config.add_route('delete_user', '/users/{id}/delete',       request_method='GET')
     config.add_route('edit_user',   '/users/{id}/edit',         request_method='GET')
     config.add_route('user',        '/users/{id}',              request_method='GET')
-
