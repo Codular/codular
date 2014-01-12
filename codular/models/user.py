@@ -20,7 +20,7 @@ crypt = cryptacular.bcrypt.BCRYPTPasswordManager()
 Return a unicode hash of the password, using BCrypt from cryptacular
 """
 def hash_password(password):
-    return unicode(crypt.encode(password))
+    return str(crypt.encode(password))
 
 class User(Base):
     """

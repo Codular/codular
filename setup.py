@@ -18,7 +18,9 @@ requires = [
     'transaction',
     'zope.sqlalchemy',
     'waitress',
-    'cryptacular'
+    'cryptacular',
+    'deform_bootstrap',
+    'pyramid_beaker',
     ]
 
 setup(name='codular',

@@ -6,3 +6,5 @@ codular.egg-info/
 codular.sqlite
 codular/__pycache__/
 codular/scripts/__pycache__/
+data/sessions/data/
+data/sessions/lock/

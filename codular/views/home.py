@@ -3,6 +3,7 @@ Home view
 """
 from pyramid.response import Response
 from pyramid.view import view_config
+from pyramid.security import authenticated_userid
 
 from sqlalchemy.exc import DBAPIError
 
