@@ -16,6 +16,6 @@ class Registration(CSRFSchema):
                                 validator=colander.Email())
     password = colander.SchemaNode(colander.String(),
                                    validator=colander.Length(min=8),
-                                   widget=deform.widget.PasswordWidget(),
+                                   widget=deform.widget.CheckedPasswordWidget(size='20'),
                                    description='Enter a password')
 
