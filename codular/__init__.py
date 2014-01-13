@@ -45,4 +45,4 @@ def add_routes(config):
     config.add_route('user',        '/users/{id}',              request_method='GET')
     
     # aliases
-    config.add_route('register', '/register')
+    config.add_route('register',    '/register',                request_method='GET')
