@@ -2,6 +2,10 @@ from pyramid.config import Configurator
 from sqlalchemy import engine_from_config
 from pyramid_beaker import session_factory_from_settings
 
+from pkg_resources import resource_filename
+from deform import Form
+import os
+
 from .models.meta import (DBSession, Base)
 from .views import (ViewHome, ViewUsers)
 
@@ -20,6 +24,12 @@ def main(global_config, **settings):
     config.add_jinja2_search_path("templates")
     config.include(add_routes)
     config.scan()
+    
+    # adding custom deform templates
+    deform_templates = resource_filename('deform', 'templates')
+    search_path = (os.path.join(os.getcwd(), 'codular/templates/forms'), deform_templates)
+
+    Form.set_zpt_renderer(search_path)
     return config.make_wsgi_app()
 
 def add_routes(config):
